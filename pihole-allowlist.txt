@@ -1,0 +1,188 @@
+# Pi-hole Allowlist
+# Maintained at: https://raw.githubusercontent.com/erikbennett/configs/main/pihole-allowlist.txt
+# Last updated: 2026-05-16
+# Purpose: Ensure functionality across known tech stack while preserving privacy blocking.
+# Add domains here when something breaks, with a comment explaining why.
+
+# ============================================================
+# APPLE / iCLOUD / macOS
+# ============================================================
+# iCloud core services (Drive, Photos, Keychain sync)
+icloud.com
+apple-cloudkit.com
+apple.com
+mzstatic.com
+is1-ssl.mzstatic.com
+# macOS updates and software delivery
+swcdn.apple.com
+swdist.apple.com
+swdownload.apple.com
+swscan.apple.com
+updates.cdn-apple.com
+# App Store
+iosapps.itunes.apple.com
+apps.apple.com
+# Push notifications (breaks iMessage, FaceTime if blocked)
+push.apple.com
+# Network connectivity check (captive portal detection)
+captive.apple.com
+# Time sync
+time.apple.com
+time.asia.apple.com
+time.euro.apple.com
+
+# ============================================================
+# GOOGLE DRIVE / GMAIL / GOOGLE SERVICES
+# ============================================================
+# Google Drive sync
+drive.google.com
+docs.google.com
+sheets.google.com
+slides.google.com
+# Gmail on iOS (already in your existing allowlist, keeping)
+googleapis.l.google.com
+accounts.google.com
+mail.google.com
+# Google connectivity check (used by many apps to verify internet)
+clients4.google.com
+clients2.google.com
+# Google storage APIs (Drive upload/download)
+storage.googleapis.com
+www.googleapis.com
+
+# ============================================================
+# PROTON
+# ============================================================
+# ProtonMail / ProtonVPN / ProtonDrive
+proton.me
+protonmail.com
+protonmail.ch
+protonstatus.com
+protonvpn.com
+protonvpn.net
+# Proton API and sync
+api.protonmail.ch
+api.proton.me
+mail.proton.me
+
+# ============================================================
+# NINTENDO SWITCH / SWITCH 2
+# ============================================================
+# Online gaming, eShop, firmware updates, Nintendo Switch Online
+nintendo.net
+nintendo.com
+nintendowifi.net
+# CDN for game downloads and updates
+ctest.cdn.nintendo.net
+atum.hac.lp1.d4c.nintendo.net
+# Nintendo Switch Online connectivity test
+nasc.nintendowifi.net
+# Friends list and online services
+bcat-topics-lp1.cdn.nintendo.net
+# Game news and notifications
+bcat-list-lp1.cdn.nintendo.net
+
+# ============================================================
+# XBOX / MICROSOFT GAMING
+# ============================================================
+# Core Xbox Live authentication (from your existing allowlist)
+device.auth.xboxlive.com
+title.mgt.xboxlive.com
+xsts.auth.xboxlive.com
+title.auth.xboxlive.com
+attestation.xboxlive.com
+xboxexperiencesprod.experimentation.xboxlive.com
+xflight.xboxlive.com
+cert.mgt.xboxlive.com
+xkms.xboxlive.com
+def-vef.xboxlive.com
+notify.xboxlive.com
+help.ui.xboxlive.com
+licensing.xboxlive.com
+eds.xboxlive.com
+www.xboxlive.com
+# Microsoft connectivity and auth
+clientconfig.passport.net
+client-s.gateway.messenger.live.com
+xbox.ipv6.microsoft.com
+www.msftncsi.com
+# Windows Update
+ctldl.windowsupdate.com
+# Microsoft telemetry (deliberately kept - required for Xbox and Windows functionality)
+v10.events.data.microsoft.com
+v20.events.data.microsoft.com
+
+# ============================================================
+# STEAM / STEAM DECK
+# ============================================================
+# Steam authentication and client
+steamcommunity.com
+steampowered.com
+steamstatic.com
+steam.tv
+# Steam content delivery network
+steamcontent.com
+edgecast.steamstatic.com
+# Steam Deck specific
+media.steampowered.com
+
+# ============================================================
+# PLEX
+# ============================================================
+# Plex authentication and relay (required even for local playback if account-linked)
+plex.tv
+plex.direct
+plexapp.com
+# Plex media server discovery
+plex.services
+
+# ============================================================
+# SYNOLOGY
+# ============================================================
+# DSM updates and QuickConnect
+synology.com
+quickconnect.to
+synology-download.com
+# Synology account services
+account.synology.com
+
+# ============================================================
+# SAMSUNG TVs
+# ============================================================
+# Samsung SmartThings and TV updates
+samsungelectronics.com
+samsungcloud.com
+samsung.com
+smartthings.com
+# Samsung CDN for firmware updates
+upu.samsungelectronics.com
+dpu.samsungelectronics.com
+
+# ============================================================
+# HBO MAX / MAX
+# ============================================================
+telegraph.api.hbo.com
+hbo.com
+hbomax.com
+max.com
+
+# ============================================================
+# ROCKSTAR / GTA
+# ============================================================
+prod.telemetry.ros.rockstargames.com
+rockstargames.com
+ros.rockstargames.com
+
+# ============================================================
+# APPLE CDN (general - breaks many things if blocked)
+# ============================================================
+aaplimg.com
+
+# ============================================================
+# CONNECTIVITY CHECKS
+# ============================================================
+# Used by many devices to test internet connectivity
+# Blocking these causes devices to think they're offline
+connectivitycheck.gstatic.com
+connectivitycheck.android.com
+msftconnecttest.com
